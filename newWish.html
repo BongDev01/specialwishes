@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Independence Day Wishes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Reset some default styles */
+    body, div, p {
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Center content vertically and horizontally */
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #FF9933 0%, #FF9933 33%, #ffffff 33%, #ffffff 66%, #088A08 66%, #088A08 100%); /* Saffron, White, Green */
+      position: relative;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif; /* New font - Poppins */
+    }
+    
+    /* Style the moving wishes text */
+    .moving-text {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      animation: moveText 15s linear infinite;
+      font-size: 3vw; /* Responsive font size */
+      color: #fff; /* White text color */
+    }
+    
+    @keyframes moveText {
+      0% { bottom: 100%; }
+      100% { bottom: -150%; }
+    }
+    
+    /* Style the wishing message */
+    .wishing-message {
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      /* Remove box shadow */
+    }
+    
+    /* Center the flag image */
+    .flag-image {
+      display: block;
+      margin: 0 auto;
+      max-width: 90%; /* Responsive width */
+      height: auto;
+    }
+    
+    /* Style flower images */
+    /* Style flower images */
+.flower {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.flower.left {
+  left: 0;
+  animation-name: moveFlowerTopBottom;
+}
+
+.flower.right {
+  right: 0;
+  animation-name: moveFlowerBottomTop;
+}
+
+@keyframes moveFlowerTopBottom {
+  0%, 100% { top: -50px; }
+  50% { top: calc(100vh + 50px); }
+}
+
+@keyframes moveFlowerBottomTop {
+  0%, 100% { bottom: -50px; }
+  50% { bottom: calc(100vh + 50px); }
+}
+
+    
+    /* Adjust share layout for small screens */
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px; /* Increased padding for better spacing */
+    }
+    
+    /* Style share icons */
+    .share-icons {
+      display: flex;
+      gap: 20px;
+      font-size: 3vw; /* Responsive font size */
+    }
+    
+    .share-icon {
+      color: #0D47A1; /* Dark Blue color */
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+    }
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Ensure the popup appears above other elements */
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    
+    .share-icon:hover {
+      color: #f00; /* Change color on hover (Red - Indian flag color) */
+    }
+    
+    /* Spinning Ashok Chakra */
+    .ashok-chakra-container {
+      width: 150px; /* Adjust size */
+      height: 150px; /* Adjust size */
+      position: absolute;
+      top: calc(50% - 75px); /* Center vertically */
+      left: calc(50% - 75px); /* Center horizontally */
+      animation: spinChakra 10s linear infinite;
+      z-index: 1;
+    }
+    
+    .wheel {
+      height: 150px;
+      width: 150px;
+      border: 1px solid darkblue;
+      border-radius: 50%;
+      position: relative;
+      margin: 0 auto;
+    }
+    
+    .wheel .line {
+      height: 100%;
+      width: 1px;
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      background: darkblue;
+    }
+    
+    .line:nth-child(1) {
+      transform: rotate(15deg)
+    }
+    
+    .line:nth-child(2) {
+      transform: rotate(30deg)
+    }
+    
+    .line:nth-child(3) {
+      transform: rotate(45deg)
+    }
+    
+    .line:nth-child(4) {
+      transform: rotate(60deg)
+    }
+    
+    .line:nth-child(5) {
+      transform: rotate(75deg)
+    }
+    
+    .line:nth-child(6) {
+      transform: rotate(90deg)
+    }
+    
+    .line:nth-child(7) {
+      transform: rotate(105deg)
+    }
+    
+    .line:nth-child(8) {
+      transform: rotate(120deg)
+    }
+    
+    .line:nth-child(9) {
+      transform: rotate(135deg)
+    }
+    
+    .line:nth-child(10) {
+      transform: rotate(150deg)
+    }
+    
+    .line:nth-child(11) {
+      transform: rotate(165deg)
+    }
+    
+    .line:nth-child(12) {
+      transform: rotate(180deg)
+    }
+    
+    @keyframes spinChakra {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"> <!-- Add Poppins font -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Add Font Awesome CSS -->
+</head>
+<body>
+  <!-- Ashok Chakra Spinning Wheel -->
+  <div class="ashok-chakra-container">
+    <div class="wheel">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+  </div>
+  
+  <div class="wishing-message">
+    <h1 style="color: #088A08;">Happy Independence Day!</h1> <!-- Green - Indian flag color -->
+    <p style="font-size: 2.5vw;">Wishing you a day filled with joy, unity, and freedom.</p>
+  </div>
+
+<!-- Background Song -->
+<audio id="background-audio" controls autoplay loop>
+  <source src="https://knowindia.india.gov.in/assets/images/vande.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  // Get the audio element
+  const audioElement = document.getElementById('background-audio');
+
+  // Play the audio when the page loads
+  audioElement.play();
+
+  // Pause the audio when the user leaves the page
+  window.addEventListener('beforeunload', () => {
+    audioElement.pause();
+  });
+</script>
+  
+  <!-- Indian Flag GIF -->
+  <img class="flag-image" src="https://tenor.com/Exej.gif" alt="Indian Flag">
+  
+  <!-- Flower Images -->
+  <img class="flower left" src="URL_TO_FLOWER_PNG" alt="Flower">
+  <img class="flower right" src="URL_TO_FLOWER_PNG" alt="Flower">
+  
+  <div class="footer">
+  <!-- Share Icons using Font Awesome with custom popup -->
+  <div class="share-icons">
+    <a class="share-icon" href="javascript:void(0);" onclick="showPopup('whatsapp')">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a class="share-icon" href="javascript:void(0);" onclick="showPopup('facebook')">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a class="share-icon" href="javascript:void(0);" onclick="showPopup('twitter')">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <!-- Add more share icons here -->
+
+    <!-- Custom Popup -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <h3>Enter Your Name:</h3>
+        <input type="text" id="username" placeholder="Your Name">
+        <button onclick="sendShare()">Send</button>
+        <button onclick="closePopup()">Close</button>
+        <input type="hidden" id="platform">
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  // Function to show the popup
+  function showPopup(platform) {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'block';
+    // Store the platform (e.g., WhatsApp) in a hidden input for use later
+    document.getElementById('platform').value = platform;
+  }
+
+  // Function to close the popup
+  function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
+  }
+
+  // Function to send the share message
+  function sendShare() {
+    const username = document.getElementById('username').value;
+    const platform = document.getElementById('platform').value;
+
+    // Customize the message for different platforms
+    let message = '';
+    if (platform === 'whatsapp') {
+      message = `${username} sends you Independence Day wishes with a website link via WhatsApp!`;
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`);
+    } else if (platform === 'facebook') {
+      message = `${username} shares Independence Day wishes with a website link on Facebook!`;
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=https://www.example.com&quote=${encodeURIComponent(message)}`);
+    } else if (platform === 'twitter') {
+      message = `${username} tweets Independence Day wishes with a website link on Twitter!`;
+      window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}&url=https://www.example.com`);
+    }
+
+    closePopup();
+  }
+</script>
+
+
+</body>
+</html>
