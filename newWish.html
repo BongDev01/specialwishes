@@ -241,24 +241,7 @@
     <p style="font-size: 2.5vw;">Wishing you a day filled with joy, unity, and freedom.</p>
   </div>
 
-<!-- Background Song -->
-<audio id="background-audio" controls autoplay loop>
-  <source src="https://knowindia.india.gov.in/assets/images/vande.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
 
-<script>
-  // Get the audio element
-  const audioElement = document.getElementById('background-audio');
-
-  // Play the audio when the page loads
-  audioElement.play();
-
-  // Pause the audio when the user leaves the page
-  window.addEventListener('beforeunload', () => {
-    audioElement.pause();
-  });
-</script>
   
   <!-- Indian Flag GIF -->
   <img class="flag-image" src="https://tenor.com/Exej.gif" alt="Indian Flag">
@@ -329,7 +312,10 @@
     closePopup();
   }
 </script>
-
+<audio id="background-audio" autoplay loop preload="auto">
+    <source src="https://knowindia.india.gov.in/assets/images/vande.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
 </body>
 </html>
